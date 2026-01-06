@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site personnel de Jérôme Perez, professeur et enseignant-chercheur en astrophysique théorique à l'ENSTA Paris.">
+  <meta name="author" content="Jérôme Perez">
+
+  <title>Jérôme Perez - Astrophysique théorique | ENSTA Paris</title>
+
+  <link rel="stylesheet" href="assets/css/00-reset.css">
+  <link rel="stylesheet" href="assets/css/01-variables.css">
+  <link rel="stylesheet" href="assets/css/02-typography.css">
+  <link rel="stylesheet" href="assets/css/03-layout.css">
+  <link rel="stylesheet" href="assets/css/04-components.css">
+  <link rel="stylesheet" href="assets/css/05-utilities.css">
+</head>
+<body data-page="index">
+  <!-- Navigation (chargée dynamiquement) -->
+  <div id="nav-placeholder"></div>
+
+  <main>
+    <!-- Section principale : Présentation -->
+    <section class="hero-simple">
+      <div class="container">
+        <div class="profile">
+          <!-- Colonne gauche : Photo + Nom (mobile: inline) -->
+          <div class="profile-header">
+            <img
+              src="./assets/images/portrait.jpg"
+              alt="Jérôme Perez"
+              class="profile-photo"
+              width="120"
+              height="150"
+            >
+            <div class="profile-identity">
+              <h1>Jérôme Perez</h1>
+              <p class="profile-title">Professeur – Enseignant-chercheur en astrophysique théorique</p>
+              <p class="profile-affiliation">Laboratoire de Mathématiques Appliquées</p>
+              <div class="profile-cv-links">
+                <a href="https://cv.archives-ouvertes.fr/jerome-perez" target="_blank" rel="noopener" class="cv-link">CV (HAL)</a>
+                <a href="https://perso.ensta.fr/~perez/cv_03_21.pdf" target="_blank" rel="noopener" class="cv-link">CV (PDF)</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Colonne droite : Coordonnées + Logo -->
+          <div class="profile-contact-block">
+            <address class="profile-contact">
+              <span class="contact-institution">ENSTA Paris - Institut Polytechnique de Paris</span>
+              <span class="contact-address">Laboratoire de Mathématiques Appliquées</span>
+              <span class="contact-address">828, Boulevard des Maréchaux</span>
+              <span class="contact-address">91762 Palaiseau CEDEX</span>
+              <br />
+              <span class="contact-address">Bureau 2.4.24 - 2ème étage </span>
+              <span class="contact-address">Aile 4 - au fond du couloir !</span>
+              <br />
+              <span class="contact-details" style="direction: rtl; unicode-bidi: bidi-override;">41 12 78 18 10</span>
+              <a href="mailto:jerome.perez@ensta.fr" class="contact-email">jerome.perez@ensta.fr</a>
+            </address>
+            <div class="profile-logo">
+              <!-- Logo ENSTA  -->
+              <img
+                src="./assets/images/ensta.png"
+                alt="ENSTA Paris"      
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Liens importants -->
+    <section class="section-links">
+      <div class="container">
+        <h2>À découvrir</h2>
+        <ul class="links-list">
+          <li>
+            <a href="https://galaxy.ensta.fr" target="_blank" rel="noopener">
+              <strong>Spiral Kreator</strong> – Fabriquez votre galaxie avec ce simulateur interactif de galaxies spirales
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Chargement du menu
+    fetch('includes/nav.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('nav-placeholder').outerHTML = html;
+        initNav();
+      });
+
+    function initNav() {
+      // Marquer le lien actif
+      const page = document.body.dataset.page;
+      const activeLink = document.querySelector(`[data-page="${page}"]`);
+      if (activeLink) activeLink.classList.add('active');
+
+      // Menu mobile toggle
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.querySelector('.nav-menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          const open = menu.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open);
+        });
+      }
+
+      // Dropdowns mobile
+      document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+        const link = item.querySelector('.nav-link');
+        link.addEventListener('click', (e) => {
+          if (window.innerWidth < 768) {
+            e.preventDefault();
+            item.classList.toggle('is-open');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

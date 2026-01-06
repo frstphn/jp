@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cours de culture de seconde année : Une histoire de la représentation du monde - Jérôme Perez, ENSTA Paris.">
+  <meta name="author" content="Jérôme Perez">
+
+  <title>Une histoire de la représentation du monde - Jérôme Perez | ENSTA Paris</title>
+
+  <link rel="stylesheet" href="assets/css/00-reset.css">
+  <link rel="stylesheet" href="assets/css/01-variables.css">
+  <link rel="stylesheet" href="assets/css/02-typography.css">
+  <link rel="stylesheet" href="assets/css/03-layout.css">
+  <link rel="stylesheet" href="assets/css/04-components.css">
+  <link rel="stylesheet" href="assets/css/05-utilities.css">
+</head>
+<body data-page="enseignement">
+  <!-- Navigation (chargée dynamiquement) -->
+  <div id="nav-placeholder"></div>
+
+  <main>
+    <!-- En-tête de page -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Une histoire de la représentation du monde</h1>
+        <p class="page-intro">Cours de culture de seconde année</p>
+      </div>
+    </section>
+
+    <!-- Cours en PDF -->
+    <section class="content-section">
+      <div class="container">
+        <h2>Cours</h2>
+
+        <ul class="document-list">
+          <li><a href="https://perso.ensta.fr/~perez/Enseignement/ENSTA/Rep_monde/cours1_pourpdf.pdf" target="_blank" rel="noopener">Les présocratiques</a></li>
+          <li><a href="https://perso.ensta.fr/~perez/Enseignement/ENSTA/Rep_monde/cours2_pourpdf.pdf" target="_blank" rel="noopener">Athènes et sa descendance</a></li>
+          <li><a href="https://perso.ensta.fr/~perez/Enseignement/ENSTA/Rep_monde/cours3_pourpdf.pdf" target="_blank" rel="noopener">Quelques repères pour se situer dans le temps</a></li>
+          <li><a href="https://perso.ensta.fr/~perez/Enseignement/ENSTA/Rep_monde/cours4_pourpdf.pdf" target="_blank" rel="noopener">La fin du géocentrisme</a></li>
+          <li><a href="https://perso.ensta.fr/~perez/Enseignement/ENSTA/Rep_monde/cours5_pourpdf.pdf" target="_blank" rel="noopener">La naissance de la physique</a></li>
+          <li><a href="https://perso.ensta.fr/~perez/Enseignement/ENSTA/Rep_monde/cours6_pourpdf.pdf" target="_blank" rel="noopener">Mécaniques célestes</a></li>
+          <li><a href="https://perso.ensta.fr/~perez/Enseignement/ENSTA/Rep_monde/cours7_pourpdf.pdf" target="_blank" rel="noopener">La représentation moderne du monde</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Chargement du menu
+    fetch('includes/nav.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('nav-placeholder').outerHTML = html;
+        initNav();
+      });
+
+    function initNav() {
+      // Marquer le lien actif
+      const page = document.body.dataset.page;
+      const activeLink = document.querySelector(`[data-page="${page}"]`);
+      if (activeLink) activeLink.classList.add('active');
+
+      // Menu mobile toggle
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.querySelector('.nav-menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          const open = menu.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open);
+        });
+      }
+
+      // Dropdowns mobile
+      document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+        const link = item.querySelector('.nav-link');
+        link.addEventListener('click', (e) => {
+          if (window.innerWidth < 768) {
+            e.preventDefault();
+            item.classList.toggle('is-open');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>
