@@ -60,10 +60,11 @@
               <a href="mailto:jerome.perez@ensta.fr" class="contact-email">jerome.perez@ensta.fr</a>
             </address>
             <div class="profile-logo">
-              <!-- Logo ENSTA  -->
               <img
                 src="./assets/images/ensta.png"
-                alt="ENSTA Paris"      
+                alt="ENSTA Paris"
+                width="130"
+                height="190"
               >
             </div>
           </div>
@@ -87,6 +88,9 @@
   </main>
 
   <script>
+    // Chemin vers la racine du site (à adapter selon la profondeur de la page)
+    const basePath = './';
+
     // Chargement du menu
     fetch('includes/nav.html')
       .then(r => r.text())
@@ -96,6 +100,14 @@
       });
 
     function initNav() {
+      // Réécrire les liens de navigation avec le basePath
+      document.querySelectorAll('[data-nav-link]').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('http') && !href.startsWith('#')) {
+          link.setAttribute('href', basePath + href);
+        }
+      });
+
       // Marquer le lien actif
       const page = document.body.dataset.page;
       const activeLink = document.querySelector(`[data-page="${page}"]`);

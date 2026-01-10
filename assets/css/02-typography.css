@@ -2,13 +2,10 @@
    02-typography.css - Polices et styles typographiques
    ========================================================================== */
 
-/* @font-face - Polices locales (à remplacer par les woff2 téléchargés) */
-/* Pour l'instant, on utilise les fallbacks système */
-
-/* Si les polices sont téléchargées, décommenter :
+/* @font-face - Polices locales hébergées */
 @font-face {
   font-family: 'Playfair Display';
-  src: url('../fonts/playfair-display/playfair-display-regular.woff2') format('woff2');
+  src: url('../fonts/playfair-display-regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -16,23 +13,15 @@
 
 @font-face {
   font-family: 'Playfair Display';
-  src: url('../fonts/playfair-display/playfair-display-bold.woff2') format('woff2');
+  src: url('../fonts/playfair-display-bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Playfair Display';
-  src: url('../fonts/playfair-display/playfair-display-italic.woff2') format('woff2');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'Source Sans Pro';
-  src: url('../fonts/source-sans-pro/source-sans-pro-regular.woff2') format('woff2');
+  src: url('../fonts/source-sans-pro-regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -40,23 +29,14 @@
 
 @font-face {
   font-family: 'Source Sans Pro';
-  src: url('../fonts/source-sans-pro/source-sans-pro-semibold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  src: url('../fonts/source-sans-pro/source-sans-pro-bold.woff2') format('woff2');
+  src: url('../fonts/source-sans-pro-bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
-*/
 
-/* Import Google Fonts temporaire (à remplacer par local) */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap');
+/* Note: source-sans-pro-semibold et playfair-display-italic manquants.
+   font-weight: 600 utilisera bold (700) en fallback. */
 
 /* Styles de base */
 body {

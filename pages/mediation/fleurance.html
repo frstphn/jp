@@ -63,11 +63,18 @@
   </button>
 
   <script>
-    fetch('../../includes/nav.html')
+    const basePath = '../../';
+    fetch(basePath + 'includes/nav.html')
       .then(r => r.text())
       .then(html => {
         document.getElementById('nav-placeholder').outerHTML = html;
         initNav();
+        document.querySelectorAll('[data-nav-link]').forEach(link => {
+          const href = link.getAttribute('href');
+          if (href && !href.startsWith('http') && !href.startsWith('#')) {
+            link.setAttribute('href', basePath + href);
+          }
+        });
       });
 
     function initNav() {

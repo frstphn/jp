@@ -122,6 +122,8 @@
   </button>
 
   <script>
+    const basePath = '../../';
+
     fetch('../../includes/nav.html')
       .then(r => r.text())
       .then(html => {
@@ -130,6 +132,13 @@
       });
 
     function initNav() {
+      document.querySelectorAll('[data-nav-link]').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('http') && !href.startsWith('#')) {
+          link.setAttribute('href', basePath + href);
+        }
+      });
+
       const page = document.body.dataset.page;
       const activeLink = document.querySelector(`[data-page="${page}"]`);
       if (activeLink) activeLink.classList.add('active');
@@ -153,7 +162,6 @@
         });
       });
 
-      // Animation toggle pour les figures cliquables
       document.querySelectorAll('.figure-playable').forEach(figure => {
         figure.addEventListener('click', () => {
           const img = figure.querySelector('img');
@@ -162,7 +170,6 @@
         });
       });
 
-      // Scroll to top
       const scrollBtn = document.querySelector('.scroll-to-top');
       if (scrollBtn) {
         const threshold = window.innerHeight * 1.1;

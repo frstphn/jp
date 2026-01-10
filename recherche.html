@@ -160,7 +160,8 @@
   </button>
 
   <script>
-    // Chargement du menu
+    const basePath = './';
+
     fetch('includes/nav.html')
       .then(r => r.text())
       .then(html => {
@@ -169,12 +170,17 @@
       });
 
     function initNav() {
-      // Marquer le lien actif
+      document.querySelectorAll('[data-nav-link]').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('http') && !href.startsWith('#')) {
+          link.setAttribute('href', basePath + href);
+        }
+      });
+
       const page = document.body.dataset.page;
       const activeLink = document.querySelector(`[data-page="${page}"]`);
       if (activeLink) activeLink.classList.add('active');
 
-      // Menu mobile toggle
       const toggle = document.querySelector('.nav-toggle');
       const menu = document.querySelector('.nav-menu');
       if (toggle && menu) {
@@ -184,7 +190,6 @@
         });
       }
 
-      // Dropdowns mobile
       document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
         const link = item.querySelector('.nav-link');
         link.addEventListener('click', (e) => {
@@ -195,7 +200,6 @@
         });
       });
 
-      // Scroll to top
       const scrollBtn = document.querySelector('.scroll-to-top');
       if (scrollBtn) {
         const threshold = window.innerHeight * 1.1;

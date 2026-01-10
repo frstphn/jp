@@ -1,0 +1,22 @@
+# Fichiers de spécification et documentation interne
+spec-ui.md
+spec-tech.md
+spec-features.md
+CHECKLIST-MIGRATION.md
+
+# Scripts de développement
+scripts/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Éditeurs
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Logs
+*.log
