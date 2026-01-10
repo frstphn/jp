@@ -1,0 +1,12 @@
+# Robots.txt pour le site de Jérôme Perez
+# https://perso.ensta.fr/~perez/
+
+# Autoriser tous les robots
+User-agent: *
+Allow: /
+
+# Fichiers et dossiers à ne pas indexer
+Disallow: /includes/
+
+# Sitemap
+Sitemap: https://perso.ensta.fr/~perez/sitemap.xml

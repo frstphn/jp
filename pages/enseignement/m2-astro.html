@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Master 2 Astrophysique Ile-De-France - Cours de gravitation classique et relativiste - Jérôme Perez">
+  <meta name="author" content="Jérôme Perez">
+
+  <title>M2 Astrophysique - Jérôme Perez | ENSTA Paris</title>
+
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <link rel="stylesheet" href="../../assets/css/00-reset.css">
+  <link rel="stylesheet" href="../../assets/css/01-variables.css">
+  <link rel="stylesheet" href="../../assets/css/02-typography.css">
+  <link rel="stylesheet" href="../../assets/css/03-layout.css">
+  <link rel="stylesheet" href="../../assets/css/04-components.css">
+  <link rel="stylesheet" href="../../assets/css/05-utilities.css">
+</head>
+<body data-page="enseignement">
+  <div id="nav-placeholder"></div>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Master 2 Astrophysique Ile-De-France</h1>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <h2>Gravitation classique</h2>
+
+        <div class="content-block">
+          <h3>Mécanique céleste et compléments</h3>
+          <ul class="document-list">
+            <li><a href="../../documents/Enseignement/M2_Astro/papiers/2corps.pdf" target="_blank" rel="noopener">Le problème à 2 corps</a></li>
+            <li><a href="../../documents/Enseignement/M2_Astro/papiers/perturbations.pdf" target="_blank" rel="noopener">Le problème à 2 corps perturbés</a></li>
+            <li><a href="../../documents/Enseignement/M2_Astro/papiers/analytique.pdf" target="_blank" rel="noopener">Mécanique analytique</a></li>
+            <li><a href="../../documents/Enseignement/M2_Astro/papiers/mareson.pdf" target="_blank" rel="noopener">Résonances, marées, limite de Roche</a></li>
+          </ul>
+        </div>
+
+        <div class="content-block">
+          <h3>Dynamique stellaire et compléments</h3>
+          <ul class="document-list">
+            <li><a href="../../documents/Enseignement/M2_Astro/papiers/gravstat.pdf" target="_blank" rel="noopener">Gravitation statistique</a></li>
+            <li><a href="../../documents/Enseignement/M2_Astro/papiers/temps_equilibre_orbite.pdf" target="_blank" rel="noopener">Temps caractéristiques, équilibre, orbite</a></li>
+            <li><a href="../../documents/Enseignement/M2_Astro/papiers/choix_equilibre.pdf" target="_blank" rel="noopener">Le choix de l'équilibre</a></li>
+            <li><a href="../../documents/Enseignement/M2_Astro/papiers/stabilite.pdf" target="_blank" rel="noopener">Stabilité des systèmes autogravitants</a></li>
+            <li><a href="../../documents/Enseignement/M2_Astro/papiers/GHD-FL1.pdf" target="_blank" rel="noopener">Notes de cours de dynamique stellaire</a></li>
+          </ul>
+        </div>
+
+        <div class="content-block">
+          <h3>Exercices de gravitation classique</h3>
+          <ul class="document-list">
+            <li><a href="examens.html">Compilation des examens donnés depuis le début du cours (année scolaire 2000-01 ...)</a></li>
+            <li><a href="../../documents/Enseignement/M2_Astro/TD/enonce_td_lune.pdf" target="_blank" rel="noopener">La théorie du mouvement de la Lune par Lagrange</a></li>
+            <li><a href="../../documents/Enseignement/M2_Astro/TD/enonce_td_orbsat.pdf" target="_blank" rel="noopener">Le mouvement d'un satellite artificiel dans le champ de la Terre applatie</a></li>
+            <li><a href="../../documents/Enseignement/M2_Astro/TD/enonce_td_orb_etoile.pdf" target="_blank" rel="noopener">Mouvement d'une étoile dans un champ pseudo-képlerien</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section alt-bg">
+      <div class="container">
+        <h2>Gravitation relativiste</h2>
+
+        <div class="content-block">
+          <ul class="document-list">
+            <li><a href="../../documents/Enseignement/M2_Astro/papiers/restreinte.pdf" target="_blank" rel="noopener">Relativité restreinte</a></li>
+            <li>
+              <a href="../../documents/Enseignement/M2_Astro/papiers/generale.pdf" target="_blank" rel="noopener">Relativité générale</a>
+              <ul class="document-list" style="margin-top: 0.5rem;">
+                <li><a href="../../documents/Enseignement/M2_Astro/TD/solution_FRLW.pdf" target="_blank" rel="noopener">Solution de Friedmann-Lemaître</a></li>
+                <li><a href="../../documents/Enseignement/M2_Astro/TD/solution_schwarzchild.pdf" target="_blank" rel="noopener">Solution de Schwarzschild</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    fetch('../../includes/nav.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('nav-placeholder').outerHTML = html;
+        initNav();
+      });
+
+    function initNav() {
+      const page = document.body.dataset.page;
+      const activeLink = document.querySelector(`[data-page="${page}"]`);
+      if (activeLink) activeLink.classList.add('active');
+
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.querySelector('.nav-menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          const open = menu.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open);
+        });
+      }
+
+      document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+        const link = item.querySelector('.nav-link');
+        link.addEventListener('click', (e) => {
+          if (window.innerWidth < 768) {
+            e.preventDefault();
+            item.classList.toggle('is-open');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

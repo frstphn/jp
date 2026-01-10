@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="L'instabilité d'orbite radiale - Recherche de Jérôme Perez en gravitation classique">
+  <meta name="author" content="Jérôme Perez">
+
+  <title>L'instabilité d'orbite radiale - Jérôme Perez | ENSTA Paris</title>
+
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <link rel="stylesheet" href="../../assets/css/00-reset.css">
+  <link rel="stylesheet" href="../../assets/css/01-variables.css">
+  <link rel="stylesheet" href="../../assets/css/02-typography.css">
+  <link rel="stylesheet" href="../../assets/css/03-layout.css">
+  <link rel="stylesheet" href="../../assets/css/04-components.css">
+  <link rel="stylesheet" href="../../assets/css/05-utilities.css">
+</head>
+<body data-page="recherche">
+  <div id="nav-placeholder"></div>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>L'instabilité d'orbite radiale</h1>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="content-block">
+          <p>Alors que les deux instabilités fondamentales de Jeans (<a href="http://scienceworld.wolfram.com/physics/JeansLength.html" target="_blank" rel="noopener">détails</a>) et d'Antonov (<a href="../../documents/Recherche/papiers/perez_thermo.pdf" target="_blank" rel="noopener">détails</a>), responsables respectivement de l'effondrement global et du cœur, conduisent généralement à une forme sphérique, l'instabilité d'orbite radiale permet de s'en écarter.</p>
+          <p>Apparue dès le début des années soixantes dans les travaux d'Antonov, puis reprise dans une série d'articles conclue par nos travaux analytiques ou numériques, l'instabilité d'orbite radiale se produit pour des systèmes caractérisés par un équilibre dont la dispersion de vitesse est fortement radiale. Ce type de système est réceptif à toutes les perturbations non radiales. Une direction privilégiée (arbitraire, issue de fluctuations) se manifeste donc et le système s'allonge selon un axe.</p>
+        </div>
+
+        <div class="content-block">
+          <div class="figure-grid">
+            <figure>
+              <img src="../../assets/images/recherche/roi.jpg" alt="Instabilité d'orbite radiale">
+              <figcaption>Manifestation de l'instabilité d'orbite radiale</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <p>Pour un système d'Ossipkov-Merrit (<a href="../../documents/Recherche/papiers/papier5_perez.pdf" target="_blank" rel="noopener">détails</a>) avec un rayon d'anisotropie radiale r<sub>a</sub>=2, nous avons pu réaliser le film ci-dessous qui montre bien l'apparition de l'instabilité sur une échelle de quelques temps dynamiques.</p>
+          <div class="figure-grid">
+            <figure>
+              <img src="../../assets/images/recherche/roi_i.gif" alt="Animation de l'instabilité d'orbite radiale">
+              <figcaption>Animation de l'instabilité d'orbite radiale</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <h2>Origine des galaxies elliptiques</h2>
+          <p>Différentes analyses (<a href="../../documents/Recherche/papiers/MD035rv2.pdf" target="_blank" rel="noopener">détails</a>) semblent montrer que cette instabilité pourrait bien être à l'origine de la forme d'une partie des galaxies elliptiques : L'effondrement d'un halo de points répartis de façon homogène sur un système auto-gravitant à l'équilibre développe une instabilité d'orbite radiale ou non suivant que l'effondrement est violent (beaucoup d'énergie cinétique radiale est transmise) ou non (peu d'énergie cinétique radiale est transmise). On obtient un effondrement violent ou calme en jouant sur le rapport du viriel initial du halo.</p>
+          <p>Toutes les simulations ont été réalisées au Pôle de Calcul Parallèle de l'ENSTA.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section alt-bg">
+      <div class="container">
+        <h2>Publications associées</h2>
+        <ul class="document-list">
+          <li><a href="../../documents/Recherche/papiers/papier5_perez.pdf" target="_blank" rel="noopener">Système d'Ossipkov-Merrit et instabilité d'orbite radiale</a></li>
+          <li><a href="../../documents/Recherche/papiers/MD035rv2.pdf" target="_blank" rel="noopener">Étude numérique de l'effondrement gravitationnel</a></li>
+          <li><a href="../../documents/Recherche/papiers/perez_thermo.pdf" target="_blank" rel="noopener">Instabilité d'Antonov et aspects thermodynamiques</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    fetch('../../includes/nav.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('nav-placeholder').outerHTML = html;
+        initNav();
+      });
+
+    function initNav() {
+      const page = document.body.dataset.page;
+      const activeLink = document.querySelector(`[data-page="${page}"]`);
+      if (activeLink) activeLink.classList.add('active');
+
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.querySelector('.nav-menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          const open = menu.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open);
+        });
+      }
+
+      document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+        const link = item.querySelector('.nav-link');
+        link.addEventListener('click', (e) => {
+          if (window.innerWidth < 768) {
+            e.preventDefault();
+            item.classList.toggle('is-open');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

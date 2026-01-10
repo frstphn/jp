@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Recueil des examens du cours de Gravitation du M2 Astrophysique Ile-De-France - Jérôme Perez">
+  <meta name="author" content="Jérôme Perez">
+
+  <title>Examens M2 Astrophysique - Jérôme Perez | ENSTA Paris</title>
+
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <link rel="stylesheet" href="../../assets/css/00-reset.css">
+  <link rel="stylesheet" href="../../assets/css/01-variables.css">
+  <link rel="stylesheet" href="../../assets/css/02-typography.css">
+  <link rel="stylesheet" href="../../assets/css/03-layout.css">
+  <link rel="stylesheet" href="../../assets/css/04-components.css">
+  <link rel="stylesheet" href="../../assets/css/05-utilities.css">
+</head>
+<body data-page="enseignement">
+  <div id="nav-placeholder"></div>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Recueil des examens du cours de Gravitation du M2 Astrophysique Ile-De-France</h1>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <h2>Examens par année</h2>
+
+        <ul class="document-list">
+          <li><a href="../../documents/Enseignement/M2_Astro/Examens/2000lag.pdf" target="_blank" rel="noopener">2000 - Les points de Lagrange</a></li>
+          <li><a href="../../documents/Enseignement/M2_Astro/Examens/2001metgrav.pdf" target="_blank" rel="noopener">2001 - Le métro gravitationnel</a></li>
+          <li><a href="../../documents/Enseignement/M2_Astro/Examens/2002orbcae.pdf" target="_blank" rel="noopener">2002 - Orbium Caelestium</a></li>
+          <li><a href="../../documents/Enseignement/M2_Astro/Examens/2003poly.pdf" target="_blank" rel="noopener">2003 - Les galaxies polytropiques</a></li>
+          <li><a href="../../documents/Enseignement/M2_Astro/Examens/2004halt.pdf" target="_blank" rel="noopener">2004 - Masses complexes, distances imaginaires</a></li>
+          <li><a href="../../documents/Enseignement/M2_Astro/Examens/2005dim.pdf" target="_blank" rel="noopener">2005 - Une affaire de dimension</a></li>
+          <li><a href="../../documents/Enseignement/M2_Astro/Examens/2006noir.pdf" target="_blank" rel="noopener">2006 - Gravitation newtonienne, matière noire, gravitation modifiée</a></li>
+          <li><a href="../../documents/Enseignement/M2_Astro/Examens/2007masvar.pdf" target="_blank" rel="noopener">2007 - Mouvement d'une particule de masse variable dans un potentiel gravitationnel</a></li>
+          <li><a href="../../documents/Enseignement/M2_Astro/Examens/2008merc.pdf" target="_blank" rel="noopener">2008 - Équations planétaires, mouvements classiques du périastre, application à Mercure</a></li>
+          <li><a href="../../documents/Enseignement/M2_Astro/Examens/2009harcpol.pdf" target="_blank" rel="noopener">2009 - Harcèlement entre polytropes</a></li>
+          <li><a href="../../documents/Enseignement/M2_Astro/Examens/2010isoboite.pdf" target="_blank" rel="noopener">2010 - Un modèle de sphère isotherme en boîte</a></li>
+          <li><a href="../../documents/Enseignement/M2_Astro/Examens/2011tnsi.pdf" target="_blank" rel="noopener">2011 - Le trou noir des sphères isotermes</a></li>
+          <li><a href="../../documents/Enseignement/M2_Astro/Examens/2012titiusbode.pdf" target="_blank" rel="noopener">2012 - La loi de Titius-Bode</a></li>
+          <li><a href="../../documents/Enseignement/M2_Astro/Examens/2013gravidyne.pdf" target="_blank" rel="noopener">2013 - Le gravidyne</a></li>
+          <li><a href="../../documents/Enseignement/M2_Astro/Examens/2014potlog.pdf" target="_blank" rel="noopener">2014 - Autour des potentiels logarithmiques</a></li>
+          <li><a href="../../documents/Enseignement/M2_Astro/Examens/2015noevec.pdf" target="_blank" rel="noopener">2015 - La symétrie associée au vecteur excentricité</a></li>
+          <li><a href="../../documents/Enseignement/M2_Astro/Examens/2016bertrand.pdf" target="_blank" rel="noopener">2016 - Le théorème de Bertrand</a></li>
+          <li><a href="../../documents/Enseignement/M2_Astro/Examens/2017geom.pdf" target="_blank" rel="noopener">2017 - Le problème des deux corps par la géométrie</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="content-section alt-bg">
+      <div class="container">
+        <h2>Compilation</h2>
+        <p>La compilation de tous ces examens en un seul fichier :</p>
+        <ul class="document-list">
+          <li><a href="../../documents/Enseignement/M2_Astro/Examens/compilation_prob.pdf" target="_blank" rel="noopener">Télécharger la compilation complète</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    fetch('../../includes/nav.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('nav-placeholder').outerHTML = html;
+        initNav();
+      });
+
+    function initNav() {
+      const page = document.body.dataset.page;
+      const activeLink = document.querySelector(`[data-page="${page}"]`);
+      if (activeLink) activeLink.classList.add('active');
+
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.querySelector('.nav-menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          const open = menu.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open);
+        });
+      }
+
+      document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+        const link = item.querySelector('.nav-link');
+        link.addEventListener('click', (e) => {
+          if (window.innerWidth < 768) {
+            e.preventDefault();
+            item.classList.toggle('is-open');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

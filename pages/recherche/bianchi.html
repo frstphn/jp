@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Modèles Bianchi - Univers homogènes et anisotropes - Recherche de Jérôme Perez">
+  <meta name="author" content="Jérôme Perez">
+
+  <title>Modèles Bianchi - Jérôme Perez | ENSTA Paris</title>
+
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <link rel="stylesheet" href="../../assets/css/00-reset.css">
+  <link rel="stylesheet" href="../../assets/css/01-variables.css">
+  <link rel="stylesheet" href="../../assets/css/02-typography.css">
+  <link rel="stylesheet" href="../../assets/css/03-layout.css">
+  <link rel="stylesheet" href="../../assets/css/04-components.css">
+  <link rel="stylesheet" href="../../assets/css/05-utilities.css">
+  <style>
+    .equation-block {
+      text-align: center;
+      margin: var(--space-md) 0;
+      overflow-x: auto;
+    }
+    .equation-block table {
+      margin: 0 auto;
+      width: 100%;
+    }
+    .equation-block td {
+      padding: var(--space-xs);
+    }
+    .equation-number {
+      text-align: right;
+      width: 40px;
+      vertical-align: middle;
+    }
+    .inline-eq {
+      vertical-align: middle;
+      display: inline;
+    }
+    .bianchi-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--space-md) 0;
+      font-size: 0.9rem;
+    }
+    .bianchi-table th, .bianchi-table td {
+      border: 1px solid var(--color-cosmic-blue);
+      padding: var(--space-xs) var(--space-sm);
+      text-align: center;
+    }
+    .bianchi-table th {
+      background-color: var(--color-cosmic-blue);
+      color: white;
+    }
+    .bianchi-table tr:nth-child(2), .bianchi-table tr:nth-child(3) { background-color: #ffcccc; }
+    .bianchi-table tr:nth-child(4), .bianchi-table tr:nth-child(5) { background-color: #ffffcc; }
+    .bianchi-table tr:nth-child(6), .bianchi-table tr:nth-child(7), .bianchi-table tr:nth-child(8), .bianchi-table tr:nth-child(9), .bianchi-table tr:nth-child(10) { background-color: #ccffff; }
+    .bianchi-table tr:nth-child(11), .bianchi-table tr:nth-child(12) { background-color: #99ff99; }
+    .highlight-eq {
+      background-color: #ffffcc;
+      padding: var(--space-sm);
+    }
+  </style>
+</head>
+<body data-page="recherche">
+  <div id="nav-placeholder"></div>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Quelques précisions sur les Univers homogènes et anisotropes</h1>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="content-block">
+          <p>Les solutions des équations de la relativité générale dans le contexte d'un Univers homogène et anisotrope (Univers de Bianchi) forment un ensemble de problèmes passionnant et suffisamment méconnu pour que nous y consacrions quelques lignes ....</p>
+        </div>
+
+        <div class="content-block">
+          <h2>Équations d'Einstein</h2>
+          <p>Les équations de la dynamique de l'Univers sont classiquement obtenues par la variation d'une action contenant deux densités de Lagrangien : L'une <img src="../../assets/images/recherche/bianchi/img1.gif" alt="Lc" class="inline-eq"> décrit l'état de courbure de l'Univers et l'autre <img src="../../assets/images/recherche/bianchi/img2.gif" alt="Lm" class="inline-eq"> décrit l'énergie impulsion présente dans l'Univers, nous avons ainsi</p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img3.gif" alt="S = (1/χ) ∫ (Lc + Lm) √(-g) d⁴x"></td>
+                <td class="equation-number">(1)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>Le terme <img src="../../assets/images/recherche/bianchi/img4.gif" alt="√(-g)" class="inline-eq">, racine carrée du déterminant de la métrique considérée.</p>
+          <p>Dans la relativité générale d'Einstein, le lagrangien de courbure est simplement le scalaire de courbure,</p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img5.gif" alt="Lc = R"></td>
+                <td class="equation-number">(2)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>trace du tenseur de Ricci, double contraction du tenseur de courbure de Riemann <img src="../../assets/images/recherche/bianchi/img6.gif" alt="R_μναβ" class="inline-eq"></p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img7.gif" alt="R = g^μν R_μν = g^μν g^αβ R_μναβ"></td>
+                <td class="equation-number">(3)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>La densité de lagrangien de matière dépend directement de la nature de celle ci. C'est à partir de <img src="../../assets/images/recherche/bianchi/img2.gif" alt="Lm" class="inline-eq"> que l'on forme le tenseur énergie-impulsion</p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img8.gif" alt="T_μν = 2[∂Lm/∂g^μν - (1/2)g_μν Lm]"></td>
+                <td class="equation-number">(4)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>Le minimum de l'action <img src="../../assets/images/recherche/bianchi/img9.gif" alt="(1)" class="inline-eq"> pour des variations de la métrique est atteint pour les équations d'Einstein</p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img10.gif" alt="R_μν - (1/2)R g_μν = χ T_μν"></td>
+                <td class="equation-number">(5)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>Sous cette forme elles font apparaître le scalaire de courbure <img src="../../assets/images/recherche/bianchi/img11.gif" alt="R" class="inline-eq"> trace du tenseur de Ricci, on peut aussi les écrire en faisant apparaître le scalaire d'énergie impulsion <img src="../../assets/images/recherche/bianchi/img12.gif" alt="T := g^μν T_μν" class="inline-eq">, une ligne de calcul donne</p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img13.gif" alt="R_μν = χ(T_μν - (1/2)g_μν T)"></td>
+                <td class="equation-number">(6)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>La constante de couplage est obtenue par limite en champ faible de la théorie, on trouve</p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img14.gif" alt="χ = 8πG/c⁴"></td>
+                <td class="equation-number">(7)</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <h2>Univers de Bianchi</h2>
+          <p>Soit l'espace métrique de la relativité générale (espacetemps), si nous supposons qu'il existe un référentiel synchrone, à un instant donné <img src="../../assets/images/recherche/bianchi/img15.gif" alt="t" class="inline-eq">, dans ce référentiel synchrone la métrique se décomposera de la façon suivante</p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img16.gif" alt="ds² = g_μν dx^μ dx^ν = dl² - dt² := g̃_ij dx^i dx^j - dt²"></td>
+                <td class="equation-number">(8)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>L'homogénéité d'un espace métrique tient à l'identité de ses propriétés métriques en tous ses points. L'espacetemps est dit homogène si, à chaque instant, sa section spatiale (l'espace, d'élément de longueur <img src="../../assets/images/recherche/bianchi/img17.gif" alt="dl²" class="inline-eq">) admet un ensemble de transformations conservant l'élément de longueur <img src="../../assets/images/recherche/bianchi/img17.gif" alt="dl²" class="inline-eq"> et permettant de mettre en relation tout point de l'espace avec tout autre : un ensemble d'isométrie. Cet ensemble est appelé groupe des déplacements.</p>
+          <p>Les classes d'équivalence des espacetemps homogènes en dimension 3+1 s'obtiennent en considérant les classes d'équivalences des constantes de structure <img src="../../assets/images/recherche/bianchi/img18.gif" alt="C^c_ab" class="inline-eq"> du groupe des déplacements.</p>
+          <p>Il est commode de décomposer ces constantes en une partie symétrique et une partie antisymétrique. Ceci est toujours possible en écrivant</p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img19.gif" alt="C^c_ab = ε_abd N^dc + δ^c_b Z_a - δ^c_a Z_b"></td>
+                <td class="equation-number">(9)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>où <img src="../../assets/images/recherche/bianchi/img20.gif" alt="ε_abd" class="inline-eq"> est le tenseur unité complètement antisymétrique et <img src="../../assets/images/recherche/bianchi/img21.gif" alt="δ^c_b" class="inline-eq"> le symbole de Kronecker, <img src="../../assets/images/recherche/bianchi/img22.gif" alt="N^ab" class="inline-eq"> est la composante complètement contravariante d'un tenseur symétrique d'ordre 2, et (pour respecter l'identité de Jacobi) le vecteur <img src="../../assets/images/recherche/bianchi/img23.gif" alt="Z" class="inline-eq"> doit vérifier</p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img24.gif" alt="N^ab Z_b = N_ab Z^b = 0"></td>
+                <td class="equation-number">(10)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>La décomposition <img src="../../assets/images/recherche/bianchi/img25.gif" alt="(9)" class="inline-eq"> permet de voir clairement qu'il existe neuf types distincts d'espaces homogènes en dimension 3+1. Six proviennent des 6 degrés de libertés introduits par les six composantes indépendantes du tenseur symétrique <img src="../../assets/images/recherche/bianchi/img26.gif" alt="N" class="inline-eq">, et trois des composantes du vecteur <img src="../../assets/images/recherche/bianchi/img23.gif" alt="Z" class="inline-eq">.</p>
+
+          <p>Une spécification plus précise est toujours possible : Le tenseur <img src="../../assets/images/recherche/bianchi/img26.gif" alt="N" class="inline-eq"> étant symétrique il existe toujours une base dans laquelle il est diagonal. Dans cette base, nous aurons</p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img27.gif" alt="N^ab = diag[n₁, n₂, n₃]"></td>
+                <td class="equation-number">(11)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>Toujours dans cette base, et sans restreindre la généralité de notre propos, la relation <img src="../../assets/images/recherche/bianchi/img28.gif" alt="(10)" class="inline-eq"> permet de poser <img src="../../assets/images/recherche/bianchi/img29.gif" alt="Z_b = [a, 0, 0]" class="inline-eq"> pourvu que</p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img30.gif" alt="a n₁ = 0"></td>
+                <td class="equation-number">(12)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>L'énumération des cas distincts peut alors se faire en considérant toutes les possibilités de multiplicité algébrique pour une valeur propre nulle de <img src="../../assets/images/recherche/bianchi/img26.gif" alt="N" class="inline-eq">, les différentes signatures de cette matrice et la condition <img src="../../assets/images/recherche/bianchi/img31.gif" alt="(12)" class="inline-eq"></p>
+          <p>Il vient</p>
+
+          <table class="bianchi-table">
+            <tr>
+              <th>Propriétés de <img src="../../assets/images/recherche/bianchi/img26.gif" alt="N"></th>
+              <th><img src="../../assets/images/recherche/bianchi/img32.gif" alt="n₁"></th>
+              <th><img src="../../assets/images/recherche/bianchi/img33.gif" alt="n₂"></th>
+              <th><img src="../../assets/images/recherche/bianchi/img34.gif" alt="n₃"></th>
+              <th><img src="../../assets/images/recherche/bianchi/img35.gif" alt="a"></th>
+              <th>Modèle</th>
+            </tr>
+            <tr>
+              <td>0 est valeur propre triple de <img src="../../assets/images/recherche/bianchi/img26.gif" alt="N"></td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td><img src="../../assets/images/recherche/bianchi/img36.gif" alt="B_I"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td><img src="../../assets/images/recherche/bianchi/img37.gif" alt="∀"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img38.gif" alt="B_V"></td>
+            </tr>
+            <tr>
+              <td>0 est valeur propre double de <img src="../../assets/images/recherche/bianchi/img26.gif" alt="N"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img39.gif" alt="1"></td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td><img src="../../assets/images/recherche/bianchi/img40.gif" alt="B_II"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>0</td>
+              <td><img src="../../assets/images/recherche/bianchi/img39.gif" alt="1"></td>
+              <td>0</td>
+              <td><img src="../../assets/images/recherche/bianchi/img37.gif" alt="∀"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img41.gif" alt="B_IV"></td>
+            </tr>
+            <tr>
+              <td>0 est valeur propre simple de <img src="../../assets/images/recherche/bianchi/img26.gif" alt="N"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img39.gif" alt="1"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img39.gif" alt="1"></td>
+              <td>0</td>
+              <td>0</td>
+              <td><img src="../../assets/images/recherche/bianchi/img42.gif" alt="B_VII₀"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>0</td>
+              <td><img src="../../assets/images/recherche/bianchi/img39.gif" alt="1"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img39.gif" alt="1"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img37.gif" alt="∀"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img43.gif" alt="B_VIIₐ"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><img src="../../assets/images/recherche/bianchi/img39.gif" alt="1"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img44.gif" alt="-1"></td>
+              <td>0</td>
+              <td>0</td>
+              <td><img src="../../assets/images/recherche/bianchi/img45.gif" alt="B_VI₀"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>0</td>
+              <td><img src="../../assets/images/recherche/bianchi/img39.gif" alt="1"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img44.gif" alt="-1"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img46.gif" alt="≠1"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img47.gif" alt="B_VIₐ"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>0</td>
+              <td><img src="../../assets/images/recherche/bianchi/img39.gif" alt="1"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img44.gif" alt="-1"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img39.gif" alt="1"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img48.gif" alt="B_III"></td>
+            </tr>
+            <tr>
+              <td>0 n'est pas valeur propre de <img src="../../assets/images/recherche/bianchi/img26.gif" alt="N"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img39.gif" alt="1"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img39.gif" alt="1"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img39.gif" alt="1"></td>
+              <td>0</td>
+              <td><img src="../../assets/images/recherche/bianchi/img49.gif" alt="B_IX"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><img src="../../assets/images/recherche/bianchi/img39.gif" alt="1"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img39.gif" alt="1"></td>
+              <td><img src="../../assets/images/recherche/bianchi/img44.gif" alt="-1"></td>
+              <td>0</td>
+              <td><img src="../../assets/images/recherche/bianchi/img50.gif" alt="B_VIII"></td>
+            </tr>
+          </table>
+
+          <p>Les cas dégénérés équivalents n'ont pas été indiqués pour des raisons de concision. Par exemple, le cas <img src="../../assets/images/recherche/bianchi/img51.gif" alt="n₁=-1, n₂=1" class="inline-eq">, <img src="../../assets/images/recherche/bianchi/img52.gif" alt="n₃=-1" class="inline-eq"> et donc forcément <img src="../../assets/images/recherche/bianchi/img53.gif" alt="a=0" class="inline-eq"> est dans la classe d'équivalence B<img src="../../assets/images/recherche/bianchi/img54.gif" alt="_IX" class="inline-eq"> avec une signature + et 0 hors du spectre. Nous retrouvons bien les neuf cas distincts d'espaces riemanniens homogènes de dimension 3. Les chiffres romains associés aux types indiqués correspondent à la classification faite par L. Bianchi en 1898.</p>
+
+          <p>Une fois les espaces homogènes classifiés, il est possible dans chaque cas d'écrire le tenseur métrique associé et d'en déduire les composantes du tenseur de Ricci.</p>
+        </div>
+
+        <div class="content-block">
+          <h2>Formulation BKL (Belinski, Khalatnikov, Lifchitz)</h2>
+          <p>On peut prouver qu'il existe toujours une famille de fonctions (<img src="../../assets/images/recherche/bianchi/img55.gif" alt="ω¹, ω², ω³" class="inline-eq">, un temps conforme <img src="../../assets/images/recherche/bianchi/img56.gif" alt="τ" class="inline-eq"> tel que <img src="../../assets/images/recherche/bianchi/img57.gif" alt="dt = N(τ)dτ" class="inline-eq"> et <img src="../../assets/images/recherche/bianchi/img58.gif" alt="N(τ)" class="inline-eq"> une fonction ''lapse'' telle que</p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img59.gif" alt="ds² = g̃_ij dx^i dx^j - dt² = γ(τ) ω^i ω^j - N²(τ) dτ²"></td>
+                <td class="equation-number">(13)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>la dépendance temporelle de la composante spatiale de la métrique se diagonalise <img src="../../assets/images/recherche/bianchi/img60.gif" alt="γ(τ) = diag[α₁(t), α₂(t), α₃(t)]" class="inline-eq"></p>
+
+          <p>On peut ainsi expliciter les équations d'Einstein : En considérant que l'Univers est rempli d'un d'un fluide parfait, de pression <img src="../../assets/images/recherche/bianchi/img61.gif" alt="P" class="inline-eq"> de densité d'énergie <img src="../../assets/images/recherche/bianchi/img62.gif" alt="ρ" class="inline-eq"> et décrit par un champ de quadrivitesse de composante covariante <img src="../../assets/images/recherche/bianchi/img63.gif" alt="u_μ" class="inline-eq"> au repos dans le référentiel synchrone (<img src="../../assets/images/recherche/bianchi/img64.gif" alt="u₀=c=1" class="inline-eq">, <img src="../../assets/images/recherche/bianchi/img65.gif" alt="u_i=0" class="inline-eq">)</p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img66.gif" alt="T_μν = P g_μν + (P+ε) u_μ u_ν"></td>
+                <td class="equation-number">(14)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>On considère généralement que ce fluide est barotropique. C'est-à-dire qu'il suit une équation d'état de la forme</p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img67.gif" alt="P = (Γ-1) ρ"></td>
+                <td class="equation-number">(15)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>ou <img src="../../assets/images/recherche/bianchi/img68.gif" alt="Γ ∈ [0,2]" class="inline-eq"> est la constante barotropique. Une telle relation est très générale et s'applique à de nombreux fluides pour peu qu'ils contiennent une phase dominante.</p>
+
+          <p>En considérant une fonction lapse égale au volume de l'Univers : <img src="../../assets/images/recherche/bianchi/img26.gif" alt="N" class="inline-eq">(<img src="../../assets/images/recherche/bianchi/img69.gif" alt="τ)=V(τ)=(α₁α₂α₃)^(1/2)" class="inline-eq">, les équations de la dynamique de l'Univers homogène et anisotrope deviennent</p>
+
+          <div class="equation-block highlight-eq">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img70.gif" alt="Système d'équations BKL"></td>
+                <td class="equation-number">(16)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>ou l'on a noté <img src="../../assets/images/recherche/bianchi/img71.gif" alt="A_{i=1,2,3} = ln(α_i)" class="inline-eq">, <img src="../../assets/images/recherche/bianchi/img72.gif" alt="χ=8πG/c⁴" class="inline-eq">, <img src="../../assets/images/recherche/bianchi/img73.gif" alt="ε₀>0" class="inline-eq"> si <img src="../../assets/images/recherche/bianchi/img74.gif" alt="0≤Γ≤2" class="inline-eq"> et</p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img75.gif" alt="E_c"><img src="../../assets/images/recherche/bianchi/img76.gif" alt="= A'₁A'₂ + A'₁A'₃ + A'₃A'₂   E_m = -4χρ₀V^(2-Γ)"></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="equation-number">(17)</td>
+              </tr>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img77.gif" alt="E_p"><img src="../../assets/images/recherche/bianchi/img78.gif" alt="= 2(n₁n₂α₁α₂ + n₁n₃α₁α₃ + n₂n₃α₂α₃) - n₁²α₁² - n₂²α₂² - n₃²α₃²"></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <h2>Formulation Hamiltonienne</h2>
+          <p>Misner remarque dès la fin des années 60 que la première des équations <img src="../../assets/images/recherche/bianchi/img79.gif" alt="(16)" class="inline-eq"> est séparée : d'un coté des termes dérivés, "cinétique" (<img src="../../assets/images/recherche/bianchi/img80.gif" alt="E_c" class="inline-eq">), de l'autre des termes non dérivés <img src="../../assets/images/recherche/bianchi/img81.gif" alt="(E_m" class="inline-eq"> et <img src="../../assets/images/recherche/bianchi/img82.gif" alt="E_p)" class="inline-eq">. Le terme cinétique est une forme quadratique, elle se diagonalise par un changement de variable linéaire</p>
+
+          <div class="equation-block">
+            <img src="../../assets/images/recherche/bianchi/img83.gif" alt="Matrice M et définition de q et p">
+          </div>
+
+          <p>dans ces nouvelles coordonnées les équations d'Einstein de la dynamique des Univers de Bianchi s'écrivent</p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img84.gif" alt="q'₁,₂ = -∂H/∂p₁,₂, p'₁,₂ = -∂H/∂q₁,₂"> et <img src="../../assets/images/recherche/bianchi/img85.gif" alt="q'₃ = ∂H/∂p₃, p'₃ = -∂H/∂q₃"></td>
+                <td class="equation-number">(18)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>avec</p>
+          <div class="equation-block">
+            <img src="../../assets/images/recherche/bianchi/img86.gif" alt="H = (1/2)<p,p> + Σk_i exp(<a_i,q>) = 0">
+          </div>
+
+          <p>les produits</p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img87.gif" alt="(x,y) := x₁y₁+x₂y₂+x₃y₃"> et <img src="../../assets/images/recherche/bianchi/img88.gif" alt="<x,y> := -x₁y₁-x₂y₂+x₃y₃"></td>
+                <td class="equation-number">(19)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>les constantes</p>
+          <div class="equation-block">
+            <img src="../../assets/images/recherche/bianchi/img89.gif" alt="Constantes k_i">
+          </div>
+
+          <p>et les vecteurs</p>
+          <div class="equation-block">
+            <img src="../../assets/images/recherche/bianchi/img90.gif" alt="Vecteurs a_i">
+          </div>
+
+          <p>dont la projection orthogonale sur le plan <img src="../../assets/images/recherche/bianchi/img91.gif" alt="(x,y)" class="inline-eq"> laisse entrevoir des applications géométriques ...</p>
+
+          <!-- Note: L'image vecteurs.jpg n'est plus disponible sur le serveur original -->
+        </div>
+
+        <div class="content-block">
+          <h2>Le billard cosmique</h2>
+          <p>Si l'on se place dans le vide <img src="../../assets/images/recherche/bianchi/img92.gif" alt="(ρ₀=0)" class="inline-eq"> et que l'on pose</p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img93.gif" alt="m(q₃) = exp(√6/3 q₃)"> et <img src="../../assets/images/recherche/bianchi/img94.gif" alt="E(q₃,p₃) = p₃²/2m"></td>
+                <td class="equation-number">(20)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>l'introduction d'un "super-temps" (nom initié par <a href="http://www34.homepage.villanova.edu/robert.jantzen/research/index.html" target="_blank" rel="noopener">R. Jantzen</a>) <img src="../../assets/images/recherche/bianchi/img95.gif" alt="t̃" class="inline-eq"> tel que <img src="../../assets/images/recherche/bianchi/img96.gif" alt="dt̃=mdτ=mdt/V" class="inline-eq"> permet d'écrire les équations de la dynamique de l'Univers sous la forme</p>
+
+          <div class="equation-block highlight-eq">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img97.gif" alt="E = (p₁²+p₂²)/2m - ξ(q₁,q₂)"> avec <img src="../../assets/images/recherche/bianchi/img98.gif" alt="Système d'équations hamiltonien"></td>
+                <td class="equation-number">(21)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>une sorte d'énergie potentielle apparaît dans le terme</p>
+
+          <div class="equation-block">
+            <table>
+              <tr>
+                <td><img src="../../assets/images/recherche/bianchi/img99.gif" alt="ξ(q₁,q₂) = ..."></td>
+                <td class="equation-number">(22)</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>Il s'agit donc d'un système hamiltonien à deux dimensions concernant une particule de masse <img src="../../assets/images/recherche/bianchi/img100.gif" alt="m(t̃)" class="inline-eq"> repérée par sa position <img src="../../assets/images/recherche/bianchi/img101.gif" alt="[q₁(t̃), q₂(t̃)]ᵀ" class="inline-eq">, d'énergie totale <img src="../../assets/images/recherche/bianchi/img102.gif" alt="E(t̃)" class="inline-eq"> et dont l'énergie potentielle est <img src="../../assets/images/recherche/bianchi/img103.gif" alt="-ξ(q₁,q₂)" class="inline-eq">. La masse et l'énergie de la particule représentant l'Univers sont variables</p>
+
+          <div class="equation-block">
+            <img src="../../assets/images/recherche/bianchi/img104.gif" alt="dm/dt̃ = (4/3)(dV/dt)"> et <img src="../../assets/images/recherche/bianchi/img105.gif" alt="dE/dt̃ = -(2/3)(p₁²+p₂²)/m² (dV/dt)">
+          </div>
+
+          <p>Lorsque l'on se rapproche de la singularité, les propriétés respectives de <img src="../../assets/images/recherche/bianchi/img106.gif" alt="E,m" class="inline-eq"> et <img src="../../assets/images/recherche/bianchi/img107.gif" alt="ξ" class="inline-eq"> font que la dynamique de l'Univers homogène et anisotrope sont assimilables à celles d'une bille de coordonnées <img src="../../assets/images/recherche/bianchi/img108.gif" alt="(q₁,q₂)" class="inline-eq"> se déplaçant dans un billard dont les bandes sont formées par les isovaleurs de la fonction <img src="../../assets/images/recherche/bianchi/img109.gif" alt="ξ(q₁,q₂)." class="inline-eq"> Ces bandes s'éloignent, à chaque rebond la bille perd un peu de vitesse mais celle ci reste toujours supérieure à la vitesse des bandes. Il existe 5 familles dynamiquement différentes correspondants aux 5 familles de contours distincts de la fonction <img src="../../assets/images/recherche/bianchi/img110.gif" alt="ξ(q₁,q₂)" class="inline-eq">.</p>
+
+          <!-- Note: L'image billards.jpg n'est plus disponible sur le serveur original -->
+
+          <p style="text-align: center; margin-top: var(--space-lg);"><a href="billard.html">Voir les animations des billards de Bianchi</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section alt-bg">
+      <div class="container">
+        <h2>Voir aussi</h2>
+        <ul class="document-list">
+          <li><a href="billard.html">Les billards de Bianchi</a> - Représentation géométrique de la dynamique</li>
+          <li><a href="jungle.html">Jungle cosmologique</a> - Exploration des solutions cosmologiques</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    fetch('../../includes/nav.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('nav-placeholder').outerHTML = html;
+        initNav();
+      });
+
+    function initNav() {
+      const page = document.body.dataset.page;
+      const activeLink = document.querySelector(`[data-page="${page}"]`);
+      if (activeLink) activeLink.classList.add('active');
+
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.querySelector('.nav-menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          const open = menu.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open);
+        });
+      }
+
+      document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+        const link = item.querySelector('.nav-link');
+        link.addEventListener('click', (e) => {
+          if (window.innerWidth < 768) {
+            e.preventDefault();
+            item.classList.toggle('is-open');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

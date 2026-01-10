@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Les billards de Bianchi - Représentation géométrique de la dynamique des univers anisotropes - Jérôme Perez">
+  <meta name="author" content="Jérôme Perez">
+
+  <title>Les billards de Bianchi - Jérôme Perez | ENSTA Paris</title>
+
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <link rel="stylesheet" href="../../assets/css/00-reset.css">
+  <link rel="stylesheet" href="../../assets/css/01-variables.css">
+  <link rel="stylesheet" href="../../assets/css/02-typography.css">
+  <link rel="stylesheet" href="../../assets/css/03-layout.css">
+  <link rel="stylesheet" href="../../assets/css/04-components.css">
+  <link rel="stylesheet" href="../../assets/css/05-utilities.css">
+</head>
+<body data-page="recherche">
+  <div id="nav-placeholder"></div>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Les billards de Bianchi</h1>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="content-block">
+          <p>Dans un univers homogène et isotrope les trois dimensions de l'espace possèdent une dynamique indépendante et fonction de la quatrième dimension de notre univers, le temps.</p>
+          <p>Il existe 11 familles distinctes d'Univers homogènes et anisotropes : les 11 Univers de Bianchi. Dans ce type d'Univers les 3 dimensions spatiales sont dilatées dans le temps par 3 facteurs d'échelles indépendants.</p>
+          <p>Dans la représentation de Misner on peut associer ces trois facteurs d'échelles aux 3 composantes d'une bille évoluant dans un billard à bande mobile. Loin de la bande, cette bille se propage en ligne droite : l'univers est dans un état dit de Kasner dans lequel deux de ses directions sont en expansion et la dernière en contraction. En se rapprochant de la bande la bille finit par rebondir sur celle-ci pour passer dans un nouvel état de propagation en ligne droite dans une autre direction : un nouvel état de Kasner.</p>
+          <p>On comprend bien que suivant la forme des bandes et sa vitesse initiale, la bille rebondit un nombre fini ou infini de fois. La forme de ces bandes est uniquement définie par la famille d'Univers considéré de Bianchi 1, sans bande, à Bianchi 9 aux bandes hyperboliques. Nous illustrons ci-dessous l'évolution de cette bille-univers dans trois cas génériques que sont Bianchi 2, Bianchi 7 et Bianchi 9.</p>
+        </div>
+
+        <div class="content-block">
+          <div class="figure-grid cols-3">
+            <figure>
+              <video width="100%" controls>
+                <source src="../../assets/videos/recherche/b2.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la balise vidéo.
+              </video>
+              <figcaption>Bianchi 2 : 1 rebond</figcaption>
+            </figure>
+            <figure>
+              <video width="100%" controls>
+                <source src="../../assets/videos/recherche/b7.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la balise vidéo.
+              </video>
+              <figcaption>Bianchi 7 : un nombre fini de rebonds</figcaption>
+            </figure>
+            <figure>
+              <video width="100%" controls>
+                <source src="../../assets/videos/recherche/b9.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la balise vidéo.
+              </video>
+              <figcaption>Bianchi 9 : une infinité de rebonds</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <p style="text-align: center;">On peut même représenter ce que "ressentirait" un objet matériel immobile dans ce type d'Univers.</p>
+        </div>
+
+        <div class="content-block">
+          <div class="figure-grid">
+            <figure>
+              <video width="100%" controls>
+                <source src="../../assets/videos/recherche/minib2.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la balise vidéo.
+              </video>
+              <figcaption>Bianchi 2 ça va !</figcaption>
+            </figure>
+            <figure>
+              <video width="100%" controls>
+                <source src="../../assets/videos/recherche/minib7.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la balise vidéo.
+              </video>
+              <figcaption>Bianchi 7 ...</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <p style="text-align: center;">Animations réalisées sous PovRay par Jos Leys, elles correspondent à la résolution des équations d'Einstein dans chacun des cas correspondants.</p>
+          <p style="text-align: center;">Ces animations sont extraites de la <a href="https://uma.ensta-paristech.fr/conf/expansion/" target="_blank" rel="noopener">Cyberconférence Expansion</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section alt-bg">
+      <div class="container">
+        <h2>Voir aussi</h2>
+        <ul class="document-list">
+          <li><a href="bianchi.html">Modèles Bianchi</a> - Formalisme mathématique des univers anisotropes</li>
+          <li><a href="jungle.html">Jungle cosmologique</a> - Exploration des solutions cosmologiques</li>
+          <li><a href="https://uma.ensta-paristech.fr/conf/expansion/" target="_blank" rel="noopener">Cyberconférence Expansion</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    fetch('../../includes/nav.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('nav-placeholder').outerHTML = html;
+        initNav();
+      });
+
+    function initNav() {
+      const page = document.body.dataset.page;
+      const activeLink = document.querySelector(`[data-page="${page}"]`);
+      if (activeLink) activeLink.classList.add('active');
+
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.querySelector('.nav-menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          const open = menu.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open);
+        });
+      }
+
+      document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+        const link = item.querySelector('.nav-link');
+        link.addEventListener('click', (e) => {
+          if (window.innerWidth < 768) {
+            e.preventDefault();
+            item.classList.toggle('is-open');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

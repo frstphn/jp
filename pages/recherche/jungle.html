@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jungle cosmologique - Le modèle standard de la cosmologie et au delà - Recherche de Jérôme Perez">
+  <meta name="author" content="Jérôme Perez">
+
+  <title>Jungle cosmologique - Jérôme Perez | ENSTA Paris</title>
+
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <link rel="stylesheet" href="../../assets/css/00-reset.css">
+  <link rel="stylesheet" href="../../assets/css/01-variables.css">
+  <link rel="stylesheet" href="../../assets/css/02-typography.css">
+  <link rel="stylesheet" href="../../assets/css/03-layout.css">
+  <link rel="stylesheet" href="../../assets/css/04-components.css">
+  <link rel="stylesheet" href="../../assets/css/05-utilities.css">
+</head>
+<body data-page="recherche">
+  <div id="nav-placeholder"></div>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Le modèle standard de la cosmologie et au delà...</h1>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="content-block">
+          <p>en construction...</p>
+        </div>
+
+        <div class="content-block">
+          <div class="figure-grid">
+            <figure>
+              <video width="100%" controls>
+                <source src="../../assets/videos/recherche/standard.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la balise vidéo.
+              </video>
+              <figcaption>Modèle standard.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <div class="figure-grid">
+            <figure>
+              <video width="100%" controls>
+                <source src="../../assets/videos/recherche/jungle1.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la balise vidéo.
+              </video>
+            </figure>
+            <figure>
+              <video width="100%" controls>
+                <source src="../../assets/videos/recherche/jungle.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la balise vidéo.
+              </video>
+            </figure>
+          </div>
+          <p style="text-align: center; margin-top: var(--space-sm);">Univers Jungle</p>
+        </div>
+
+        <div class="content-block">
+          <p style="text-align: center;">Animations réalisées sous PovRay par Jos Leys, elles correspondent à la résolution des équations d'Einstein dans chacun des cas correspondants.</p>
+          <p style="text-align: center;">Ces animations sont extraites de la <a href="https://uma.ensta-paristech.fr/conf/expansion/" target="_blank" rel="noopener">Cyberconférence Expansion</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section alt-bg">
+      <div class="container">
+        <h2>Ressources</h2>
+        <ul class="document-list">
+          <li><a href="../../documents/Textes/jungle.pdf" target="_blank" rel="noopener">La jungle cosmologique (version française)</a></li>
+          <li><a href="https://hal.archives-ouvertes.fr/hal-00968772" target="_blank" rel="noopener">Article de recherche original (HAL)</a></li>
+          <li><a href="https://uma.ensta-paristech.fr/conf/expansion/" target="_blank" rel="noopener">Cyberconférence Expansion</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <h2>Voir aussi</h2>
+        <ul class="document-list">
+          <li><a href="bianchi.html">Modèles Bianchi</a> - Univers homogènes et anisotropes</li>
+          <li><a href="billard.html">Les billards de Bianchi</a> - Représentation géométrique de la dynamique</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    fetch('../../includes/nav.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('nav-placeholder').outerHTML = html;
+        initNav();
+      });
+
+    function initNav() {
+      const page = document.body.dataset.page;
+      const activeLink = document.querySelector(`[data-page="${page}"]`);
+      if (activeLink) activeLink.classList.add('active');
+
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.querySelector('.nav-menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          const open = menu.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open);
+        });
+      }
+
+      document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+        const link = item.querySelector('.nav-link');
+        link.addEventListener('click', (e) => {
+          if (window.innerWidth < 768) {
+            e.preventDefault();
+            item.classList.toggle('is-open');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

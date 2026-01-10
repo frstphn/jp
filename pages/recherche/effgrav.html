@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="L'effondrement gravitationnel - Recherche de Jérôme Perez en gravitation classique">
+  <meta name="author" content="Jérôme Perez">
+
+  <title>L'effondrement gravitationnel - Jérôme Perez | ENSTA Paris</title>
+
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <link rel="stylesheet" href="../../assets/css/00-reset.css">
+  <link rel="stylesheet" href="../../assets/css/01-variables.css">
+  <link rel="stylesheet" href="../../assets/css/02-typography.css">
+  <link rel="stylesheet" href="../../assets/css/03-layout.css">
+  <link rel="stylesheet" href="../../assets/css/04-components.css">
+  <link rel="stylesheet" href="../../assets/css/05-utilities.css">
+</head>
+<body data-page="recherche">
+  <div id="nav-placeholder"></div>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>L'effondrement gravitationnel</h1>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="content-block">
+          <p>Lorsque l'on met en présence un ensemble de N particules massives trois situations génériques peuvent se présenter :</p>
+          <ol>
+            <li>Il s'effondre sous l'effet de son propre poids ;</li>
+            <li>Son champ gravitationnel n'est pas suffisant pour le lier et il s'évapore ;</li>
+            <li>Par miracle, il est dans un état d'équilibre global et il y reste.</li>
+          </ol>
+        </div>
+
+        <div class="content-block">
+          <p>La deuxième situation n'est pas très intéressante et l'on étudie généralement le passage de la première à la troisième. Dans le contexte de L'univers en expansion le problème est celui de la formation des grandes structures, sans expansion il s'agit de comprendre les propriétés de l'interaction gravitationnelle sur de faibles échelles (galactiques) et de modéliser par exemple la formation et l'évolution des amas globulaires.</p>
+        </div>
+
+        <div class="content-block">
+          <p>L'approche analytique de ce problème est possible notamment par des méthodes symplectiques (<a href="../../documents/Recherche/papiers/0402488.pdf" target="_blank" rel="noopener">détails</a>). Avec Fabrice Roy, nous avons pu mener une étude numérique exhaustive du problème de l'effondrement gravitationnel (<a href="../../documents/Recherche/papiers/MD035rv2.pdf" target="_blank" rel="noopener">détails</a>). Nous avons considéré des systèmes dont la taille caractéristique est un peu supérieure à leur <a href="http://scienceworld.wolfram.com/physics/JeansLength.html" target="_blank" rel="noopener">longueur de Jeans</a> globale : ces systèmes ne forment qu'une seule structure par effondrement gravitationnel.</p>
+          <p>Nous avons pu montrer que le résultat de cet effondrement dépend des propriétés de l'état initial :</p>
+        </div>
+
+        <div class="content-block">
+          <ul>
+            <li>Si l'état initial est globalement homogène, l'effondrement produit une structure sphérique dont la densité est constante du centre jusqu'au rayon contenant 50% de la masse totale du système, puis décroit comme une loi de puissance du rayon (1/r<sup>4</sup>). Le tout forme donc une structure Cœur-Halo, semblable à celle observée pour la plupart des amas globulaires de notre galaxie.</li>
+          </ul>
+
+          <div class="figure-grid">
+            <figure>
+              <img src="../../assets/images/recherche/m3_noao.jpg" alt="M3 (NGC 5272)">
+              <figcaption>M3 (NGC 5272)</figcaption>
+            </figure>
+            <figure>
+              <img src="../../assets/images/recherche/m22_cfht.jpg" alt="M22 (NGC 6656)">
+              <figcaption>M22 (NGC 6656)</figcaption>
+            </figure>
+          </div>
+
+          <ul>
+            <li>Si l'état initial est suffisamment inhomogène (grumeaux, profil de densité, ...) l'effondrement produit une structure généralement sphérique mais qui se différencie de la précédente par l'absence d'un Cœur notable et qui présente donc une densité en loi de puissance décroissante depuis le centre jusqu'au bord du système.</li>
+          </ul>
+        </div>
+
+        <div class="content-block">
+          <h2>Films de nos simulations</h2>
+          <p>Cliquez sur une image pour lancer l'animation.</p>
+          <div class="figure-grid">
+            <figure class="figure-playable" data-static="../../assets/images/recherche/eff_cub1.jpg" data-animated="../../assets/images/recherche/effondrement_cubique.gif">
+              <img src="../../assets/images/recherche/eff_cub1.jpg" alt="Effondrement cubique homogène">
+              <figcaption>Un effondrement cubique homogène</figcaption>
+            </figure>
+            <figure class="figure-playable" data-static="../../assets/images/recherche/eff_sph1.jpg" data-animated="../../assets/images/recherche/effondrement_spherique.gif">
+              <img src="../../assets/images/recherche/eff_sph1.jpg" alt="Effondrement sphérique homogène">
+              <figcaption>Un effondrement sphérique homogène</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <h2>Explication du mécanisme</h2>
+          <p>Nous avons pu expliquer une telle différence entre ces deux types d'effondrement par de simples considérations :</p>
+          <p>Les inhomogénéités des systèmes concernés s'effondrent en premier (à cause de leur plus petite <a href="http://scienceworld.wolfram.com/physics/JeansLength.html" target="_blank" rel="noopener">longueur de Jeans</a>). Elles forment une structure proche de l'équilibre au centre géométrique du système, avant que celui-ci ne soit encore complètement effondré. L'ensemble est donc dans un état où le contraste de densité est très important entre les régions centrales et les régions externes, tout semble réuni pour que se produise une instabilité d'Antonov (<a href="../../documents/Recherche/papiers/perez_thermo.pdf" target="_blank" rel="noopener">détails</a>) : Le cœur s'effondre en même temps que le halo.</p>
+          <p>Sans de suffisantes inhomogénéités, un tel mécanisme en deux temps ne peut se produire et l'on assiste à la formation d'un large cœur issu du freinage imposé par la phase de premier croisement.</p>
+        </div>
+
+        <div class="content-block">
+          <div class="figure-grid">
+            <figure class="figure-playable" data-static="../../assets/images/recherche/grumeaux1.gif" data-animated="../../assets/images/recherche/film_grumeaux.gif">
+              <img src="../../assets/images/recherche/grumeaux1.gif" alt="Effondrement inhomogène">
+              <figcaption>Effondrement inhomogène</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <p>Toutes les simulations ont été réalisées au Pôle de Calcul Parallèle de l'ENSTA.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section alt-bg">
+      <div class="container">
+        <h2>Publications associées</h2>
+        <ul class="document-list">
+          <li><a href="../../documents/Recherche/papiers/0402488.pdf" target="_blank" rel="noopener">Méthodes symplectiques pour l'effondrement gravitationnel</a></li>
+          <li><a href="../../documents/Recherche/papiers/MD035rv2.pdf" target="_blank" rel="noopener">Étude numérique exhaustive de l'effondrement gravitationnel</a></li>
+          <li><a href="../../documents/Recherche/papiers/perez_thermo.pdf" target="_blank" rel="noopener">Aspects thermodynamiques et instabilité d'Antonov</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    fetch('../../includes/nav.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('nav-placeholder').outerHTML = html;
+        initNav();
+      });
+
+    function initNav() {
+      const page = document.body.dataset.page;
+      const activeLink = document.querySelector(`[data-page="${page}"]`);
+      if (activeLink) activeLink.classList.add('active');
+
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.querySelector('.nav-menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          const open = menu.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open);
+        });
+      }
+
+      document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+        const link = item.querySelector('.nav-link');
+        link.addEventListener('click', (e) => {
+          if (window.innerWidth < 768) {
+            e.preventDefault();
+            item.classList.toggle('is-open');
+          }
+        });
+      });
+
+      // Animation toggle pour les figures cliquables
+      document.querySelectorAll('.figure-playable').forEach(figure => {
+        figure.addEventListener('click', () => {
+          const img = figure.querySelector('img');
+          const isPlaying = figure.classList.toggle('is-playing');
+          img.src = isPlaying ? figure.dataset.animated : figure.dataset.static;
+        });
+      });
+    }
+  </script>
+</body>
+</html>

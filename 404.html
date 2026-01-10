@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Page non trouvée - Jérôme Perez">
+  <meta name="author" content="Jérôme Perez">
+  <meta name="robots" content="noindex">
+
+  <title>404 - Page aspirée par un trou noir | Jérôme Perez</title>
+
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="stylesheet" href="/assets/css/00-reset.css">
+  <link rel="stylesheet" href="/assets/css/01-variables.css">
+  <link rel="stylesheet" href="/assets/css/02-typography.css">
+  <link rel="stylesheet" href="/assets/css/03-layout.css">
+  <link rel="stylesheet" href="/assets/css/04-components.css">
+  <link rel="stylesheet" href="/assets/css/05-utilities.css">
+  <style>
+    .error-page {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-xl);
+    }
+    .black-hole {
+      width: 200px;
+      height: 200px;
+      margin-bottom: var(--space-lg);
+      animation: spin 20s linear infinite;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .error-code {
+      font-size: 6rem;
+      font-weight: 700;
+      color: var(--color-cosmic-blue);
+      line-height: 1;
+      margin-bottom: var(--space-sm);
+    }
+    .error-title {
+      font-size: 1.5rem;
+      color: var(--color-stellar-gold);
+      margin-bottom: var(--space-md);
+    }
+    .error-message {
+      font-size: 1.1rem;
+      max-width: 500px;
+      margin-bottom: var(--space-xl);
+      color: var(--color-text-muted);
+    }
+    .home-button {
+      display: inline-block;
+      padding: var(--space-sm) var(--space-lg);
+      background-color: var(--color-cosmic-blue);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: background-color var(--transition-fast);
+      margin-bottom: var(--space-xl);
+    }
+    .home-button:hover {
+      background-color: #1a4a6e;
+      color: white;
+    }
+    .sitemap {
+      width: 100%;
+      max-width: 800px;
+      text-align: left;
+    }
+    .sitemap h2 {
+      text-align: center;
+      margin-bottom: var(--space-lg);
+      font-size: 1.2rem;
+    }
+    .sitemap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-lg);
+    }
+    .sitemap-section h3 {
+      font-size: 1rem;
+      color: var(--color-cosmic-blue);
+      margin-bottom: var(--space-sm);
+      border-bottom: 2px solid var(--color-stellar-gold);
+      padding-bottom: var(--space-xs);
+    }
+    .sitemap-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sitemap-section li {
+      margin-bottom: var(--space-xs);
+    }
+    .sitemap-section a {
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .sitemap-section a:hover {
+      color: var(--color-cosmic-blue);
+    }
+  </style>
+</head>
+<body>
+  <main class="error-page">
+    <svg class="black-hole" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- Disque d'accrétion externe -->
+      <ellipse cx="100" cy="100" rx="95" ry="40" fill="none" stroke="#d4a84b" stroke-width="2" opacity="0.3"/>
+      <ellipse cx="100" cy="100" rx="85" ry="35" fill="none" stroke="#d4a84b" stroke-width="2" opacity="0.4"/>
+      <ellipse cx="100" cy="100" rx="75" ry="30" fill="none" stroke="#d4a84b" stroke-width="3" opacity="0.5"/>
+      <ellipse cx="100" cy="100" rx="65" ry="25" fill="none" stroke="#e8c066" stroke-width="3" opacity="0.6"/>
+      <ellipse cx="100" cy="100" rx="55" ry="20" fill="none" stroke="#f0d080" stroke-width="4" opacity="0.7"/>
+      <ellipse cx="100" cy="100" rx="45" ry="15" fill="none" stroke="#f8e0a0" stroke-width="4" opacity="0.8"/>
+      <!-- Horizon des événements -->
+      <circle cx="100" cy="100" r="30" fill="#0a0a0a"/>
+      <circle cx="100" cy="100" r="32" fill="none" stroke="#1a5a7a" stroke-width="2" opacity="0.8"/>
+      <!-- Singularité -->
+      <circle cx="100" cy="100" r="5" fill="#000"/>
+      <!-- Effet de lentille gravitationnelle -->
+      <circle cx="100" cy="100" r="38" fill="none" stroke="url(#lensGradient)" stroke-width="1"/>
+      <defs>
+        <radialGradient id="lensGradient" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+          <stop offset="70%" stop-color="#4a90a8" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#1a5a7a" stop-opacity="0.6"/>
+        </radialGradient>
+      </defs>
+    </svg>
+
+    <div class="error-code">404</div>
+    <h1 class="error-title">Cette page a franchi l'horizon des événements</h1>
+    <p class="error-message">
+      Comme la lumière piégée par un trou noir, cette page semble avoir été aspirée
+      au-delà du point de non-retour. Aucune information ne peut en échapper...
+    </p>
+
+    <a href="/index.html" class="home-button">Retourner à l'accueil</a>
+
+    <div class="sitemap">
+      <h2>Plan du site</h2>
+      <div class="sitemap-grid">
+        <div class="sitemap-section">
+          <h3>Accueil</h3>
+          <ul>
+            <li><a href="/index.html">Page d'accueil</a></li>
+            <li><a href="/publications.html">Publications</a></li>
+            <li><a href="/representation.html">Représentation</a></li>
+          </ul>
+        </div>
+
+        <div class="sitemap-section">
+          <h3>Recherche</h3>
+          <ul>
+            <li><a href="/recherche.html">Recherche</a></li>
+            <li><a href="/pages/recherche/effgrav.html">Effondrement gravitationnel</a></li>
+            <li><a href="/pages/recherche/isochronie.html">Théorie de l'isochronie</a></li>
+            <li><a href="/pages/recherche/roi.html">Instabilité d'orbite radiale</a></li>
+            <li><a href="/pages/recherche/jungle.html">Jungle cosmologique</a></li>
+            <li><a href="/pages/recherche/bianchi.html">Modèles Bianchi</a></li>
+            <li><a href="/pages/recherche/billard.html">Billards de Bianchi</a></li>
+          </ul>
+        </div>
+
+        <div class="sitemap-section">
+          <h3>Enseignement</h3>
+          <ul>
+            <li><a href="/enseignement.html">Enseignement</a></li>
+            <li><a href="/pages/enseignement/m2-astro.html">M2 Astrophysique</a></li>
+            <li><a href="/pages/enseignement/m2-ams.html">M2 AMS</a></li>
+            <li><a href="/pages/enseignement/examens.html">Examens</a></li>
+          </ul>
+        </div>
+
+        <div class="sitemap-section">
+          <h3>Médiation</h3>
+          <ul>
+            <li><a href="/mediation.html">Médiation scientifique</a></li>
+            <li><a href="/pages/mediation/fleurance.html">Festival de Fleurance</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -94,7 +94,7 @@ p:last-child {
 
 /* Liens */
 a {
-  color: var(--color-stellar-gold);
+  color: var(--color-cosmic-blue);
   transition: color var(--transition-fast);
 }
 

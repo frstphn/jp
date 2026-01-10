@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Festival d'astronomie de Fleurance - Participations de Jérôme Perez depuis 2000">
+  <meta name="author" content="Jérôme Perez">
+
+  <title>Festival de Fleurance - Jérôme Perez | ENSTA Paris</title>
+
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <link rel="stylesheet" href="../../assets/css/00-reset.css">
+  <link rel="stylesheet" href="../../assets/css/01-variables.css">
+  <link rel="stylesheet" href="../../assets/css/02-typography.css">
+  <link rel="stylesheet" href="../../assets/css/03-layout.css">
+  <link rel="stylesheet" href="../../assets/css/04-components.css">
+  <link rel="stylesheet" href="../../assets/css/05-utilities.css">
+</head>
+<body data-page="mediation">
+  <div id="nav-placeholder"></div>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Festival d'astronomie de Fleurance</h1>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="content-block">
+          <p>Je participe chaque année depuis le mois d'Août 2000 au <a href="http://www.festival-astronomie.com/" target="_blank" rel="noopener">festival d'astronomie de Fleurance</a>, dans le Gers.</p>
+        </div>
+
+        <div class="content-block">
+          <h2>Participations</h2>
+          <ul class="document-list">
+            <li><strong>2015</strong> : La physique du rugby (Conférence) / Le 100<sup>ème</sup> anniversaire du théorème de Noether (Cours fil noir)</li>
+            <li><strong>2014</strong> : Lagrange l'inspirateur ? (Cours fil rouge) / J.L. Lagrange et le mystère de la lettre H (Cours fil rouge)</li>
+            <li><strong>2013</strong> : Les grandes hypothèses de l'astronomie et de l'astrophysique (Conférence) / L'histoire et le problème de la matière noire (Cours fil rouge)</li>
+            <li><strong>2012</strong> : Doit on craindre une guerre galactique ? (Conférence) / Comment Lagrange a-t-il inventé la physique théorique moderne (Cours fil noir)</li>
+            <li><strong>2011</strong> : La fin du monde est elle prévue pour le 20/12/2012 ? (Conférence) / Équations de Maxwell ou d'Einstein, même combat ? (Cours fil noir)</li>
+            <li><strong>2010</strong> : Histoires d'instabilités (Cours fil noir)</li>
+            <li><strong>2009</strong> : La dynamique de l'Univers ? (Cours fil noir)</li>
+            <li><strong>2008</strong> : Pourquoi la gravitation est-elle une propriété de l'espace ? (Cours fil noir)</li>
+            <li><strong>2007</strong> : Soirée thématique sur le temps (Conférence) avec Etienne Klein</li>
+            <li><strong>2006</strong> : La saga des trous noirs (Conférence)</li>
+            <li><strong>2005</strong> : La fin de vie des étoiles de faible masse (Cours fil rouge)</li>
+            <li><strong>2004</strong> : Les systèmes auto-gravitants (Cours)</li>
+            <li><strong>2003</strong> : Le chaos en astrophysique (Conférence)</li>
+            <li><strong>2002</strong> : Tout tourne (Conférence) / Le problème des 2 corps en astrophysique (Cours)</li>
+            <li><strong>2001</strong> : La vie privée des galaxies (Conférence)</li>
+            <li><strong>2000</strong> : Histoire de la représentation du monde d'Anaximandre à Poincaré (Cours) / Quelques grandes questions de l'astrophysique... (Conférence)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    fetch('../../includes/nav.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('nav-placeholder').outerHTML = html;
+        initNav();
+      });
+
+    function initNav() {
+      const page = document.body.dataset.page;
+      const activeLink = document.querySelector(`[data-page="${page}"]`);
+      if (activeLink) activeLink.classList.add('active');
+
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.querySelector('.nav-menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          const open = menu.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open);
+        });
+      }
+
+      document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+        const link = item.querySelector('.nav-link');
+        link.addEventListener('click', (e) => {
+          if (window.innerWidth < 768) {
+            e.preventDefault();
+            item.classList.toggle('is-open');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

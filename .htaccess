@@ -1,0 +1,144 @@
+# =============================================================================
+# .htaccess - Configuration Apache pour le site de Jérôme Perez
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Page d'erreur 404 personnalisée
+# -----------------------------------------------------------------------------
+ErrorDocument 404 /~perez/404.html
+
+# -----------------------------------------------------------------------------
+# Compression GZIP
+# -----------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    # Compresser les fichiers texte
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# -----------------------------------------------------------------------------
+# Mise en cache des ressources statiques
+# -----------------------------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # Images
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # Vidéos
+    ExpiresByType video/mp4 "access plus 1 year"
+    ExpiresByType video/webm "access plus 1 year"
+
+    # Polices
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+
+    # CSS et JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+
+    # HTML
+    ExpiresByType text/html "access plus 1 day"
+
+    # PDF
+    ExpiresByType application/pdf "access plus 1 month"
+</IfModule>
+
+# -----------------------------------------------------------------------------
+# En-têtes de cache
+# -----------------------------------------------------------------------------
+<IfModule mod_headers.c>
+    # Ressources statiques (1 an)
+    <FilesMatch "\.(ico|jpg|jpeg|png|gif|svg|webp|mp4|webm|woff|woff2)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # CSS et JS (1 mois)
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+
+    # HTML (1 jour)
+    <FilesMatch "\.(html)$">
+        Header set Cache-Control "public, max-age=86400"
+    </FilesMatch>
+</IfModule>
+
+# -----------------------------------------------------------------------------
+# En-têtes de sécurité
+# -----------------------------------------------------------------------------
+<IfModule mod_headers.c>
+    # Protection contre le clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Protection contre le sniffing MIME
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Protection XSS
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Politique de référent
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# -----------------------------------------------------------------------------
+# Types MIME
+# -----------------------------------------------------------------------------
+<IfModule mod_mime.c>
+    # SVG
+    AddType image/svg+xml svg svgz
+    AddEncoding gzip svgz
+
+    # Polices
+    AddType font/woff woff
+    AddType font/woff2 woff2
+
+    # Vidéos
+    AddType video/mp4 mp4
+    AddType video/webm webm
+</IfModule>
+
+# -----------------------------------------------------------------------------
+# Protection des fichiers sensibles
+# -----------------------------------------------------------------------------
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Protéger les fichiers de configuration
+<FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|orig|psd|sh|sql|sw[op])|~)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# -----------------------------------------------------------------------------
+# Désactiver le listing des répertoires
+# -----------------------------------------------------------------------------
+Options -Indexes
+
+# -----------------------------------------------------------------------------
+# Encodage UTF-8 par défaut
+# -----------------------------------------------------------------------------
+AddDefaultCharset UTF-8
+
+# -----------------------------------------------------------------------------
+# Redirection index par défaut
+# -----------------------------------------------------------------------------
+DirectoryIndex index.html

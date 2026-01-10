@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Master Analyse Modélisation & Simulation - Module de modélisation en astrophysique - Jérôme Perez">
+  <meta name="author" content="Jérôme Perez">
+
+  <title>M2 Analyse Modélisation Simulation - Jérôme Perez | ENSTA Paris</title>
+
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <link rel="stylesheet" href="../../assets/css/00-reset.css">
+  <link rel="stylesheet" href="../../assets/css/01-variables.css">
+  <link rel="stylesheet" href="../../assets/css/02-typography.css">
+  <link rel="stylesheet" href="../../assets/css/03-layout.css">
+  <link rel="stylesheet" href="../../assets/css/04-components.css">
+  <link rel="stylesheet" href="../../assets/css/05-utilities.css">
+</head>
+<body data-page="enseignement">
+  <div id="nav-placeholder"></div>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Master Analyse Modélisation & Simulation</h1>
+        <p class="page-intro">UPSay-INSTN-UVSQ-ENSTA-CENTRALE-CACHAN</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="content-block">
+          <ul class="document-list">
+            <li>Responsable du module AMS TA09 "Modélisation en astrophysique"</li>
+            <li>Professeur dans le cours d'introduction aux systèmes astrophysiques</li>
+          </ul>
+        </div>
+
+        <div class="content-block">
+          <h2>Notes de cours</h2>
+          <ul class="document-list">
+            <li><a href="../../documents/Enseignement/Autres/transparents/homogenes.pdf" target="_blank" rel="noopener">Dynamique de l'univers homogène et isotrope</a></li>
+            <li><a href="../../documents/Enseignement/Autres/transparents/gravitation.pdf" target="_blank" rel="noopener">Ce qu'il faudrait savoir sur la gravitation...</a></li>
+          </ul>
+        </div>
+
+        <div class="content-block">
+          <h2>Slides plus anciens</h2>
+          <ul class="document-list">
+            <li><a href="../../documents/Enseignement/Autres/transparents/cours_simod.pdf" target="_blank" rel="noopener">Intérieur stellaire</a></li>
+            <li><a href="../../documents/Enseignement/Autres/transparents/cours_simod2.pdf" target="_blank" rel="noopener">Gravitation</a></li>
+            <li><a href="../../documents/Enseignement/Autres/transparents/phystat2mecaflu.pdf" target="_blank" rel="noopener">De la physique statistique à la mécanique des fluides</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    fetch('../../includes/nav.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('nav-placeholder').outerHTML = html;
+        initNav();
+      });
+
+    function initNav() {
+      const page = document.body.dataset.page;
+      const activeLink = document.querySelector(`[data-page="${page}"]`);
+      if (activeLink) activeLink.classList.add('active');
+
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.querySelector('.nav-menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          const open = menu.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open);
+        });
+      }
+
+      document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+        const link = item.querySelector('.nav-link');
+        link.addEventListener('click', (e) => {
+          if (window.innerWidth < 768) {
+            e.preventDefault();
+            item.classList.toggle('is-open');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>
