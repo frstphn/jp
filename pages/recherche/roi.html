@@ -72,6 +72,11 @@
     </section>
   </main>
 
+  <!-- Scroll to top -->
+  <button class="scroll-to-top" aria-label="Retour en haut de page">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+  </button>
+
   <script>
     fetch('../../includes/nav.html')
       .then(r => r.text())
@@ -103,6 +108,18 @@
           }
         });
       });
+
+      // Scroll to top
+      const scrollBtn = document.querySelector('.scroll-to-top');
+      if (scrollBtn) {
+        const threshold = window.innerHeight * 1.1;
+        window.addEventListener('scroll', () => {
+          scrollBtn.classList.toggle('is-visible', window.scrollY > threshold);
+        }, { passive: true });
+        scrollBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
     }
   </script>
 </body>

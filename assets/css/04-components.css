@@ -825,3 +825,55 @@
     padding: var(--space-xs);
   }
 }
+
+/* ==========================================================================
+   SCROLL TO TOP
+   ========================================================================== */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-stellar-gold);
+  color: var(--color-deep-space);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition:
+    opacity var(--transition-base),
+    visibility var(--transition-base),
+    transform var(--transition-base),
+    background-color var(--transition-fast);
+  z-index: 999;
+}
+
+.scroll-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  background-color: var(--color-nebula-purple);
+  color: var(--color-white);
+}
+
+.scroll-to-top:focus-visible {
+  outline: 2px solid var(--color-stellar-gold);
+  outline-offset: 2px;
+}
+
+.scroll-to-top svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
